@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-POMODORO_HOME = File.expand_path( File.dirname(__FILE__) )
+POMODORO_HOME = File.dirname(File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__)
 
 require "osx/cocoa"
 include OSX
